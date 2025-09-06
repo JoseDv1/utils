@@ -1,0 +1,71 @@
+command_timeout = 1200
+add_newline = false
+
+format ="$os$username$memory_usage$hostname$directory$git_branch$git_commit$git_state$git_status$nodejs$bun$package$cmd_duration$character"
+
+[username]
+format = "🙍‍♂️ [$user | ]($style)"
+show_always = true
+aliases = {"jose1" = "JoseDv1"}
+
+[directory]
+home_symbol = "🏠"
+truncate_to_repo = false
+
+[git_branch]
+always_show_remote = true
+format = "[$symbol$branch(:$remote_branch)]($style) "
+
+
+[git_commit]
+only_detached = false
+tag_disabled = false
+
+[git_status]
+conflicted = "!"
+modified = "~"
+
+[bun]
+format = '[$symbol\($version\)]($style) '
+
+
+[package]
+disabled = true
+
+
+[character]
+success_symbol = '[➜](bold green) '
+error_symbol = '[✗](bold red) '
+
+[memory_usage]
+format = "[${ram}]($style) "
+disabled = false
+
+[os]
+disabled = false
+format = "[$symbol]($style) "
+style = "bold green"
+
+# Iconos; cambia si prefieres texto:
+[os.symbols]
+Windows = ""
+Ubuntu = ""
+Linux = ""
+
+# --- Shell actual (pwsh vs bash) ---
+[shell]
+disabled = false
+bash_indicator = "bash"
+powershell_indicator = "pwsh"
+cmd_indicator = "cmd"
+fish_indicator = "fish"
+zsh_indicator = "zsh"
+format = "[$indicator]($style) "
+style = "bold purple"
+
+# --- Solo en WSL: muestra la distro (Ubuntu, Debian, etc.) ---
+[env_var.WSL_DISTRO_NAME]
+variable = "WSL_DISTRO_NAME"
+disabled = false
+format = "[WSL:$env_value]($style) "
+style = "bold yellow"
