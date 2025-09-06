@@ -1,12 +1,12 @@
 command_timeout = 1200
 add_newline = false
 
-format ="$os$username$memory_usage$hostname$directory$git_branch$git_commit$git_state$git_status$nodejs$bun$package$cmd_duration$character"
+format = "$os$username$memory_usage$hostname$directory$git_branch$git_commit$git_state$git_status$nodejs$bun$package$cmd_duration$character"
 
 [username]
-format = "🙍‍♂️ [$user | ]($style)"
+format = "🙍 [$user | ]($style)"
 show_always = true
-aliases = {"jose1" = "JoseDv1"}
+aliases = { "jose1" = "JoseDv1" }
 
 [directory]
 home_symbol = "🏠"
@@ -43,29 +43,7 @@ disabled = false
 
 [os]
 disabled = false
-format = "[$symbol]($style) "
-style = "bold green"
+format = "[$symbol]($style)"
 
-# Iconos; cambia si prefieres texto:
 [os.symbols]
-Windows = ""
-Ubuntu = ""
-Linux = ""
-
-# --- Shell actual (pwsh vs bash) ---
-[shell]
-disabled = false
-bash_indicator = "bash"
-powershell_indicator = "pwsh"
-cmd_indicator = "cmd"
-fish_indicator = "fish"
-zsh_indicator = "zsh"
-format = "[$indicator]($style) "
-style = "bold purple"
-
-# --- Solo en WSL: muestra la distro (Ubuntu, Debian, etc.) ---
-[env_var.WSL_DISTRO_NAME]
-variable = "WSL_DISTRO_NAME"
-disabled = false
-format = "[WSL:$env_value]($style) "
-style = "bold yellow"
+Ubuntu = "🐧 "
