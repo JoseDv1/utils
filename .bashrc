@@ -26,8 +26,6 @@ shopt -s cdspell      # corrige errores menores al usar cd
 shopt -s dirspell     # corrige errores menores al usar nombres de archivos
 # shopt -s autocd       # cambia a un directorio solo con escribir su nombre / # desactivado por usar zoxide
 
-
-
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -122,11 +120,6 @@ export OLLAMA_MODELS=/mnt/c/Users/JoseDv/.ollama/models
 # ------------ Rust ------------
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
-# Zoxide 
-export PATH="$HOME/.local/bin:$PATH"
-eval "$(zoxide init bash --cmd cd)"
-
-
 # ------------ NVM (Node Version Manager) - Lazy Load ------------
 export NVM_DIR="$HOME/.nvm"
 _load_nvm() {
@@ -140,3 +133,21 @@ npm()  { unset -f npm;  _load_nvm; npm  "$@"; }
 npx()  { unset -f npx;  _load_nvm; npx  "$@"; }
 pnpm() { unset -f pnpm; _load_nvm; pnpm "$@"; }
 corepack() { unset -f corepack; _load_nvm; corepack "$@"; }
+
+# ------------ Zoxide ------------
+export PATH="$HOME/.local/bin:$PATH"
+eval "$(zoxide init bash --cmd cd)"
+
+# ------------ FZF ------------
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f /usr/share/doc/fzf/examples/key-bindings.bash ] && source /usr/share/doc/fzf/examples/key-bindings.bash
+[ -f /usr/share/doc/fzf/examples/completion.bash ] && source /usr/share/doc/fzf/examples/completion.bash
+
+# ------------ BAT ------------
+export BAT_THEME="TwoDark"
+export BAT_PAGER="less -R"
+export BAT_STYLE="header,numbers,grid"
+alias batn='bat --paging=never'
+alias batp='bat --paging=always'
+alias cat='bat --style=plain --paging=never'
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
