@@ -138,10 +138,6 @@ corepack() { unset -f corepack; _load_nvm; corepack "$@"; }
 export PATH="$HOME/.local/bin:$PATH"
 eval "$(zoxide init bash --cmd cd)"
 
-# ------------ FZF ------------
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-[ -f /usr/share/doc/fzf/examples/key-bindings.bash ] && source /usr/share/doc/fzf/examples/key-bindings.bash
-[ -f /usr/share/doc/fzf/examples/completion.bash ] && source /usr/share/doc/fzf/examples/completion.bash
 
 # ------------ BAT ------------
 export BAT_THEME="TwoDark"
